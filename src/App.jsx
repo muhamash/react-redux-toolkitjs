@@ -3,6 +3,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Counter from './components/Counter';
+import Post from './components/Post';
 import Stats from './components/Stats';
 import { decrement, increment } from './features/counters/counterSlice';
 
@@ -10,8 +11,8 @@ import { decrement, increment } from './features/counters/counterSlice';
 function App() {
 
   const state = useSelector( ( state => state.counter ) )
+  const dispatch = useDispatch();
   
-  const dispatch = useDispatch()
   // const handleIncrement = ( id ) =>
   // {
   //   setState( ( prev ) =>
@@ -43,6 +44,9 @@ function App() {
         }
       </div>
       <Stats totalCount={ total } />
+      <div className="py-5">
+        <Post/>
+      </div>
     </div>
   );
 }
