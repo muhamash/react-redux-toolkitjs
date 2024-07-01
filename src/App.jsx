@@ -1,14 +1,14 @@
+/* eslint-disable no-undef */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './App.css';
 import Counter from './components/Counter';
 import Stats from './components/Stats';
-import counter from './data/counter';
 
 
 function App() {
 
-  const [ state, setState ] = React.useState(counter);
-
+  const state = useSelector((state => state.counter))
   const handleIncrement = ( id ) =>
   {
     setState( ( prev ) =>
