@@ -28,11 +28,13 @@ export default function Posts() {
     
     if (!isLoading && !isError && posts.length > 0) {
         content = (
-            <ul>
+           <div className="bg-black/30 w-[80%] mx-auto text-center text-black font-md">
+             <ul className="border-1 rounded-md">
                 {posts.map((post) => (
                     <li key={post.id}>{post.title}</li>
                 ))}
             </ul>
+           </div>
         );
     }
 
